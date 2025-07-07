@@ -1,0 +1,135 @@
+/* General styling */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #e0dcec; /* Light purple background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login page container */
+.login-page {
+  width: 90%;
+  max-width: 500px; /* Keep the box width consistent */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Ensure it doesn't expand unnecessarily */
+  padding-bottom: 40px; /* Add some space at the bottom */
+}
+
+/* Header styling */
+.login-header {
+  margin-bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-logo {
+  width: 120px; /* Match the logo size from the homepage */
+  height: auto;
+}
+
+.login-header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #7b6fae;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  margin-top: 10px;
+}
+
+/* Login container styling */
+.login-container {
+  background-color: #ffffff; /* White background */
+  border: 10px solid #7b6fae;
+  border-radius: 10px;
+  padding: 20px; /* Reduce padding for a shorter box */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 140%;
+  max-width: 500px;
+  height: auto; /* Adjust height dynamically */
+}
+
+/* Title styling */
+.login-title {
+  font-family: 'Roboto', sans-serif; /* Better font for paragraphs */
+
+  font-size: 2.5rem;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+/* Form styling */
+.login-form .form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.login-form .form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.login-form .form-input:focus {
+  border-color: #7b6fae;
+  outline: none;
+}
+
+/* Login button styling */
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #7b6fae;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+.login-button:hover {
+  background-color: #6a5a9e;
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Back button styling */
+.back-button {
+  margin-top: 15px;
+  text-decoration: none;
+}
+
+.back-button button {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  color: #7b6fae;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.back-button button:hover {
+  background-color: #7b6fae;
+  color: white;
+}

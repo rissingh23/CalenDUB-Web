@@ -1,0 +1,181 @@
+.signup-component {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.signup-component-fields {
+    flex: 1; 
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #ffffff;
+}
+
+.signup-component-fields-header {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    text-align: center;
+    top: 1rem;
+    left: 1rem;
+}
+
+.signup-component-fields-header-logo {
+    height: 40px;
+    margin-right: 0.5rem;
+}
+
+.signup-component-fields-header-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.signup-component-fields-form {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.signup-component-fields-form-titles {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.signup-component-fields-form span {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.signup-component-fields-form-titles .form-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.signup-component-fields-form-titles .form-subtitle {
+    color: #6e6e6e;
+    margin: 0;
+}
+
+.or-separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 1rem 0;
+    gap: 15px; 
+    color: #777;         
+    font-size: 0.8rem;    
+}
+
+/* Horizontal Line Styling */
+.or-separator hr {
+    flex: 1;              
+    border: none;         
+    height: 1px;          
+    background-color: #ccc;
+    margin: 0;            
+}
+
+.google-uw-button-text {
+    flex: 1;
+    text-align: center;
+}
+
+.signup-component-fields-form a {
+    color: #449cfa;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.signup-component-image {
+    flex: 1; 
+}
+
+.signup-component-image-image {
+    height: 100%;
+    object-fit: cover;
+    border: #ffffff 10px solid;
+    border-radius: 15px;
+}
+
+.signup-form-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative; 
+}
+
+.signup-form-field span {
+    color: #000000;
+    font-size: 0.8rem;
+}
+
+.signup-form-field input {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.signup-form-container button {
+    width: 100%;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 4px;
+    margin: 0.7rem 0 1rem 0;
+    font-size: 1rem;
+    background-color: #f6e69f;
+    color: #333;
+    cursor: pointer;
+}
+
+.show-password {
+    position: absolute;
+    right: 10px;
+    top: 40%;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.show-password img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    opacity: 0.7; 
+    transition: opacity 0.3s ease;
+}
+
+.show-password:hover img {
+    opacity: 1;
+}
+
+.signup-form-container button:hover {
+    background-color: #F1E3A4;
+}
+
+.signup-error-message {
+    color: #ff0000;
+    font-size: 0.8rem;
+    margin: 0 0 0.5rem 0;
+    padding: 0.5rem;
+    border: #ff0000 1px solid;
+    border-radius: 10px;
+}
+
+@media (max-width: 1200px) {
+    .signup-component-image {
+        display: none;
+    }
+}

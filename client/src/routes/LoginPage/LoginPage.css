@@ -1,0 +1,182 @@
+.login-component {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.login-component-fields {
+    flex: 1; 
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #ffffff;
+}
+
+.login-component-fields-header {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+.login-component-fields-header-logo {
+    height: 40px;
+    width: auto;       
+    margin-right: 0.5rem;
+}
+
+.login-component-fields-header-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.login-component-fields-form {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-component-fields-form-titles {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.login-component-fields-form span {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.login-component-fields-form-titles .form-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.login-component-fields-form-titles .form-subtitle {
+    color: #6e6e6e;
+    margin: 0;
+}
+
+.or-separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 1rem 0;
+    gap: 15px; 
+    color: #777;         
+    font-size: 0.8rem;    
+}
+
+/* Horizontal Line Styling */
+.or-separator hr {
+    flex: 1;              
+    border: none;         
+    height: 1px;          
+    background-color: #ccc;
+    margin: 0;            
+}
+
+.google-uw-button-text {
+    flex: 1;
+    text-align: center;
+}
+
+.login-component-fields-form a {
+    color: #449cfa;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.login-component-image {
+    flex: 1; 
+}
+
+.login-component-image-image {
+    height: 100%;
+    object-fit: cover;
+    border: #ffffff 10px solid;
+    border-radius: 15px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative; 
+}
+
+.form-field span {
+    color: #000000;
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+}
+
+.form-field input {
+    width: 100%;
+    padding: 0.6rem;
+    padding-right: 40px; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+}
+
+.show-password {
+    position: absolute;
+    right: 10px;
+    top: 37%;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.show-password img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    opacity: 0.7; 
+    transition: opacity 0.3s ease;
+}
+
+.show-password:hover img {
+    opacity: 1;
+}
+
+.login-form-container button {
+    width: 100%;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 4px;
+    margin: 0.7rem 0 1rem 0;
+    font-size: 1rem;
+    background-color: #CBC3E3;
+    color: #333;
+    cursor: pointer;
+}
+
+.error-message {
+    color: #ff0000;
+    font-size: 0.8rem;
+    margin: 0 0 0.5rem 0;
+    padding: 0.5rem;
+    border: #ff0000 1px solid;
+    border-radius: 10px;
+}
+
+.login-form-container button:hover {
+    background-color: #aa9bd8;
+}
+
+@media (max-width: 1200px) {
+    .login-component-image {
+        display: none;
+    }
+}

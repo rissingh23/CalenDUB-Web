@@ -1,0 +1,35 @@
+.google-uw-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: transparent;
+    border: 1px solid #cccccc;       
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: #000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    gap: 0.5rem;                 
+}
+
+.google-uw-button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.google-icon,
+.uw-icon {
+    object-fit: contain;
+}
+
+.google-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.uw-icon {
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+}

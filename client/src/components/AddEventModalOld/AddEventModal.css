@@ -1,0 +1,16 @@
+.add-event-modal {
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.add-event-modal span {
+  display: flex;
+  gap: 5px;
+}
+
+.error-message {
+  color: #d42222;
+  font-size: 0.75rem;
+}

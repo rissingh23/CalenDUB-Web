@@ -1,0 +1,35 @@
+.calendar-header {
+  font-family: 'Outfit', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.calendar-header h1,
+h3 {
+  display: inline-block;
+  margin: 0.25rem !important;
+}
+
+.calendar-nav {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: left;
+  align-items: center;
+}
+
+.calendar-nav button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0.125rem;
+  color: black;
+}
+
+.calendar-header h1 {
+  font-size: 1.5rem;
+}
+
+.calendar-header h3 {
+  font-size: 1rem;
+}

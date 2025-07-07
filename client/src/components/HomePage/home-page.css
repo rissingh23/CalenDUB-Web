@@ -1,0 +1,111 @@
+/* General body styling */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #e0dcec, #d1c4e9); /* Light gradient for the background */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  font-family: Arial, sans-serif;
+}
+
+/* Main container styling */
+
+.home-page:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+}
+.home-page {
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  width: 90%;
+  max-width: 800px;
+  border: 10px solid #7b6fae; /* Purple border */
+  border-radius: 15px; /* Rounded corners */
+  background-color: #fff;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* Floating effect */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally inside the container */
+  text-align: center; /* Ensure text is centered */
+  padding: 30px 20px;
+}
+
+/* Header styling */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Ensure header is centered */
+  gap: 5px; /* Reduce the space between the logo and title */
+  margin-bottom: 0px; /* Remove unnecessary space below the header */
+}
+
+.uw-logo {
+  width: 180px;
+  height: auto;
+  margin-bottom: 0; /* Ensure no additional margin below the logo */
+}
+
+h1 {
+  font-size: 4rem; /* Adjust for better proportions */
+  font-weight: bold;
+  color: #7b6fae;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  margin: 0; /* Ensure no extra margin above or below the title */
+}
+
+/* Content section styling */
+.content {
+  margin: 10px 0;
+}
+
+.content h2 {
+  font-size: 2rem;
+  font-family: 'Poppins', sans-serif; /* Use a different font for the heading */
+  color: #333;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.content p {
+  font-family: 'Roboto', sans-serif; /* Better font for paragraphs */
+  font-size: 1.2rem; /* Increase font size for readability */
+  line-height: 1.6; /* Add line spacing */
+  color: #555; /* Subtle, neutral text color */
+  margin: 10px 0;
+}
+
+/* Button container styling */
+.options {
+  display: flex;
+  gap: 20px; /* Spacing between buttons */
+  margin-top: 20px;
+  justify-content: center; /* Ensure buttons are centered */
+}
+
+/* Button styling */
+.button {
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background-color: #7b6fae;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+  background-color: #6a5a9e;
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #e0dcec, 0 0 0 4px #7b6fae;
+}

@@ -1,0 +1,18 @@
+.logo {
+    width: 70px;
+}
+
+.alignment {
+    display: flex;
+    justify-content: left;
+    padding-top: 10px;
+}
+
+.body {
+    padding-bottom: 10px;
+   
+}
+
+.name {
+    padding-top: 9px;
+}

@@ -2,8 +2,8 @@ import './Header.css';
 import logo from 'assets/logo.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { useAuth } from 'context/AuthContext.tsx';
-import { auth } from "../../firebase/firebase.ts";
+import { useAuth } from 'context/AuthContext';
+import { auth } from "../../firebase/firebase";
 import { signOut } from 'firebase/auth';
 
 interface HeaderProps {}
@@ -34,7 +34,7 @@ const Header : React.FC<HeaderProps> = () => {
 
     const handleGoToCalendar = () => {
         setShowDropdown(false);
-        navigate('/');
+        navigate('/explore');
     };
 
     return (

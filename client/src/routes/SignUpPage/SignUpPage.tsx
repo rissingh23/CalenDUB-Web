@@ -6,7 +6,7 @@ import passwordEyeHide from 'assets/password-eye-hide.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import GoogleLoginButton from 'components/GoogleLoginButton/GoogleLoginButton';
-import { auth } from "../../firebase/firebase.ts";
+import { auth } from "../../firebase/firebase";
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { makeAuthenticatedRequest, API_ENDPOINTS } from '../../utils/api';
 

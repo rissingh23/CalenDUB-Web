@@ -1,17 +1,18 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 import "./home-page.css";
 const logo = '/images/logo.png';
 
-
 const HomePage: React.FC = () => {
+  const navigate = useNavigate();
+
   // Button handlers
   const handleLogin = () => { 
-    window.location.href = "/login"; // Replace with actual login URL
+    navigate('/login');
   };
 
   const handleViewCalendar = () => {
-    alert("Redirecting to calendar...");
-    window.location.href = "/calendar"; // Replace with actual calendar URL
+    navigate('/explore');
   };
 
   return (

@@ -1,5 +1,5 @@
 import { MouseEvent } from 'react';
-import './calendarEvent.css';
+import './CalendarEvent.css';
 import { Event } from 'types/Event';
 
 interface CalendarEventProps {

@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Event } from 'types/Event';
 import './PageHeader.css';
 

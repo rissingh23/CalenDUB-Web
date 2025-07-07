@@ -11,17 +11,11 @@ const API_CONFIG = {
 const environment = import.meta.env.MODE || 'development';
 export const API_BASE_URL = API_CONFIG[environment as keyof typeof API_CONFIG].baseURL;
 
-// API endpoints
-export const API_ENDPOINTS = {
-  EVENTS: '/api/events',
-  USERS: '/api/users',
-  ORGANIZERS: '/api/organizers',
-  HEALTH: '/api/health'
-};
-
-// Helper function to create full API URLs
-export const createApiUrl = (endpoint: string) => {
-  return `${API_BASE_URL}${endpoint}`;
-};
+// Debug logging
+console.log('🔍 API Configuration Debug:');
+console.log('- Environment MODE:', import.meta.env.MODE);
+console.log('- Detected environment:', environment);
+console.log('- VITE_API_URL:', import.meta.env.VITE_API_URL);
+console.log('- Final API_BASE_URL:', API_BASE_URL);
 
 export default API_CONFIG; 

@@ -1,7 +1,8 @@
 import { auth } from '../firebase/firebase';
+import { API_BASE_URL } from '../config/api';
 
-// Base URL for API calls - update this port to match your server
-const API_BASE_URL = 'http://localhost:5001/api'; // Updated to avoid port 5000 conflict
+// Use the proper API configuration that handles environment variables
+console.log('🔍 utils/api.ts using API_BASE_URL:', API_BASE_URL);
 
 /**
  * Make an authenticated API call with Firebase token
@@ -23,7 +24,10 @@ export const makeAuthenticatedRequest = async (
     ...options.headers,
   };
 
-  return fetch(`${API_BASE_URL}${endpoint}`, {
+  const url = `${API_BASE_URL}${endpoint}`;
+  console.log('🔍 Making authenticated request to:', url);
+
+  return fetch(url, {
     ...options,
     headers,
   });
@@ -36,7 +40,10 @@ export const makePublicRequest = async (
   endpoint: string,
   options: RequestInit = {}
 ): Promise<Response> => {
-  return fetch(`${API_BASE_URL}${endpoint}`, options);
+  const url = `${API_BASE_URL}${endpoint}`;
+  console.log('🔍 Making public request to:', url);
+  
+  return fetch(url, options);
 };
 
 /**
@@ -54,7 +61,10 @@ export const makeAuthenticatedFormRequest = async (
 
   const token = await user.getIdToken();
   
-  return fetch(`${API_BASE_URL}${endpoint}`, {
+  const url = `${API_BASE_URL}${endpoint}`;
+  console.log('🔍 Making authenticated form request to:', url);
+  
+  return fetch(url, {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${token}`,
@@ -67,8 +77,8 @@ export const makeAuthenticatedFormRequest = async (
  * API endpoints
  */
 export const API_ENDPOINTS = {
-  EVENTS: '/events',
-  EVENTS_MY: '/events/my-events',
-  USERS: '/users',
-  ORGANIZERS: '/organizers',
+  EVENTS: '/api/events',
+  EVENTS_MY: '/api/events/my-events',
+  USERS: '/api/users',
+  ORGANIZERS: '/api/organizers',
 } as const; 

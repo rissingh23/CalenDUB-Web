@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Event } from 'types/Event';
 import { FaLocationDot } from 'react-icons/fa6';
 import { FaClock, FaHashtag } from 'react-icons/fa';
-import { createApiUrl, API_ENDPOINTS } from '../../config/api';
+import { makePublicRequest, API_ENDPOINTS } from '../../utils/api';
 import './AddEventModal.css';
 
 interface AddEventModalProps {
@@ -90,22 +90,24 @@ const AddEventModal = (props: AddEventModalProps) => {
     }
   };
 
-  const postEventData = (event: Event) => {
-    fetch(createApiUrl(API_ENDPOINTS.EVENTS), {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(event),
-    }).then((response) => {
+  const postEventData = async (event: Event) => {
+    try {
+      const response = await makePublicRequest(API_ENDPOINTS.EVENTS, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(event),
+      });
+
       if (!response.ok) {
         throw new Error('Failed to post event data');
       } else {
         console.log(event);
       }
-    }).catch((error) => {
+    } catch (error) {
       console.error('Error posting event data:', error);
-    });
+    }
   };
 
   return (

@@ -17,7 +17,8 @@
     "test": "jest",
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "setup": "node setup.js"
+    "setup": "node setup.js",
+    "build": "echo 'Build complete'"
   },
   "keywords": [],
   "author": "",

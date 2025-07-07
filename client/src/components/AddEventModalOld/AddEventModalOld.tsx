@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Event } from 'types/Event';
 import { FaLocationDot } from 'react-icons/fa6';
 import { FaClock, FaHashtag } from 'react-icons/fa';
+import { createApiUrl, API_ENDPOINTS } from '../../config/api';
 import './AddEventModal.css';
 
 interface AddEventModalProps {
@@ -58,7 +59,7 @@ const AddEventModal = (props: AddEventModalProps) => {
       setErrorMessage('Start time must be before end time');
     } else {
       const newEventFields : Event = {
-        id: events.length,
+        id: events.length.toString(),
         name: event.title,
         date: event.date,
         time: `${event.startTime}-${event.endTime}`,
@@ -90,7 +91,7 @@ const AddEventModal = (props: AddEventModalProps) => {
   };
 
   const postEventData = (event: Event) => {
-    fetch('/api/events', {
+    fetch(createApiUrl(API_ENDPOINTS.EVENTS), {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

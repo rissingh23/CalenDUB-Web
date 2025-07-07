@@ -4,7 +4,7 @@ const API_CONFIG = {
     baseURL: 'http://localhost:5100'
   },
   production: {
-    baseURL: import.meta.env.VITE_API_URL || 'https://calenDUB-backend.onrender.com'
+    baseURL: (import.meta.env.VITE_API_URL || 'https://calendub-backend.onrender.com').replace(/\/$/, '')
   }
 };
 

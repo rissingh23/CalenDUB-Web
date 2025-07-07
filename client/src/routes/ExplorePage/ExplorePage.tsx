@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react';
 import {
-  HeaderTitle,
   Calendar,
   EventDetails,
   PageHeader,
-  CalendarHeader,
   Header,
   AddEventModal,
 } from 'components';

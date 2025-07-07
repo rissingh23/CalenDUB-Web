@@ -1,12 +1,7 @@
 import './AddEventModal.css';
 import { useState, useEffect, useRef } from 'react';
 import { Organizer } from 'types/Organizer';
-import defaultimage from '../../assets/defaultimage.jpg';
-import { format, parseISO } from "date-fns";
-import CreateOrganizationModal from '../CreateOrganizationModal/CreateOrganizationModal';
-import { FormControl, MenuItem, Select, CircularProgress } from "@mui/material";
-import { FaCalendar, FaClock, FaLocationDot, FaFileArrowUp, FaPlus, FaCheck, FaX } from 'react-icons/fa6';
-import { FaSpinner } from 'react-icons/fa';
+import { FaClock, FaLocationDot, FaFileArrowUp, FaPlus, FaCheck, FaX } from 'react-icons/fa6';
 import { makeAuthenticatedFormRequest, makePublicRequest, API_ENDPOINTS } from '../../utils/api';
 import { useAuth } from '../../context/AuthContext';
 import { isUWEmail } from '../../utils/emailUtils';
@@ -24,14 +19,7 @@ const AddEventModal: React.FC<AddEventModalProps> = ({ isOpen, onClose, onEventC
   const [filteredOrganizers, setFilteredOrganizers] = useState<Organizer[]>([]);
   const [organizerInput, setOrganizerInput] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
-  const [isOpenFR, setIsOpenFR] = useState(false);
   const [selectingOrganizer, setSelectingOrganizer] = useState(false);
-
-  const [isOrgModalOpen, setIsOrgModalOpen] = useState(false);
-
-  const handleCreateOrgClick = () => {
-    setIsOrgModalOpen(true);
-  };
 
   const [title, setTitle] = useState('');
   const titleInputRef = useRef<HTMLInputElement>(null);
@@ -52,9 +40,9 @@ const AddEventModal: React.FC<AddEventModalProps> = ({ isOpen, onClose, onEventC
   const [endDate, setEndDate] = useState<Date>(defaultEndDate);
   const [allDay, setAllDay] = useState(false);
   const [recurring, setRecurring] = useState('');
-  const [endsOption, setEndsOption] = useState('never');
-  const [endsAfterCount, setEndsAfterCount] = useState(1);
-  const [endsOnDate, setEndsOnDate] = useState<Date>(new Date(startDate.getTime() + 7 * 24 * 60 * 60 * 1000));
+  const [endsOption] = useState('never');
+  const [endsAfterCount] = useState(1);
+  const [endsOnDate] = useState<Date>(new Date(startDate.getTime() + 7 * 24 * 60 * 60 * 1000));
 
   const [isInPerson, setIsInPerson] = useState(false);
   const [isVirtual, setIsVirtual] = useState(false);
@@ -68,8 +56,6 @@ const AddEventModal: React.FC<AddEventModalProps> = ({ isOpen, onClose, onEventC
   const [files, setFiles] = useState<File[]>([]);
 
   const [error, setError] = useState('');
-
-  const [showAddOrganizerModal, setShowAddOrganizerModal] = useState(false);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFiles = e.target.files;
@@ -165,7 +151,6 @@ const AddEventModal: React.FC<AddEventModalProps> = ({ isOpen, onClose, onEventC
   }
 
   useEffect(() => {
-    setIsOpenFR(isOpen);
     if (isOpen) {
       titleInputRef.current?.focus();
     }
@@ -211,34 +196,6 @@ const AddEventModal: React.FC<AddEventModalProps> = ({ isOpen, onClose, onEventC
     setShowDropdown(false);
     setOrganizerInput(organizer);
     setSelectingOrganizer(true);
-  };
-
-  const handleCreateOrganizer = async (name: string, description: string, picture: File | null) => {
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('description', description);
-    if (picture) {
-      formData.append('picture', picture);
-    }
-
-    try {
-      const response = await makeAuthenticatedFormRequest(API_ENDPOINTS.ORGANIZERS, formData);
-  
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Failed to create organizer');
-      }
-  
-      const newOrganizer = await response.json();
-      setOrganizers((prevOrganizers) => [...prevOrganizers, newOrganizer]);
-      console.log('Organizer created successfully:', newOrganizer);
-
-    } catch (error: any) {
-      console.error('Error creating organizer:', error);
-      setError(error.message || 'Error creating organizer. Please try again.');
-    }
-
-    setShowDropdown(false);
   };
 
   const removeFile = (index: number) => {
@@ -438,7 +395,7 @@ const AddEventModal: React.FC<AddEventModalProps> = ({ isOpen, onClose, onEventC
         </div>
 
         <div className="form-section">
-          <h3><FaCalendar /> Recurring</h3>
+          <h3><FaClock /> Recurring</h3>
           <div className="form-group">
             <select
               value={recurring}
@@ -518,7 +475,6 @@ const AddEventModal: React.FC<AddEventModalProps> = ({ isOpen, onClose, onEventC
         >
           {loading ? (
             <>
-              <FaSpinner className="spinner" />
               Creating...
             </>
           ) : (

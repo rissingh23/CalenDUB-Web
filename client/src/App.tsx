@@ -1,9 +1,21 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HomePage, ExplorePage, LoginPage, SignupPage } from 'routes';
-import 'App.css';
+import './App.css';
 import { AuthProvider } from "./context/AuthContext";
+import { useEffect } from 'react';
+import { keepAlive } from './utils/keepAlive';
 
 const App = () => {
+  // Start keep-alive pings when app loads
+  useEffect(() => {
+    keepAlive.start();
+    
+    // Cleanup on unmount
+    return () => {
+      keepAlive.stop();
+    };
+  }, []);
+
   return (
     <AuthProvider>
       <Router>

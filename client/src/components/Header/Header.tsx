@@ -33,6 +33,7 @@ const Header : React.FC<HeaderProps> = () => {
     };
 
     const handleGoToCalendar = () => {
+        console.log('Go to Calendar clicked');
         setShowDropdown(false);
         navigate('/explore');
     };
